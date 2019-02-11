@@ -10,7 +10,7 @@
 </head>
 <body>
 	
-	<nav class="navbar navbar-expand-sm navbar-light bg-light">
+	<nav class="navbar navbar-expand-sm navbar-light bg-light custom-nav">
 		<div class="container">
 			<a href="#" class="navbar-brand">Signup & Login</a>
 			<button type="button" class="navbar-toggler" data-target="#mynav" data-toggle="collapse">
