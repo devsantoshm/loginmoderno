@@ -3,6 +3,7 @@ body{
 	margin:0;
 	padding:0;
 	font-family: sans-serif;
+	background-color: #F3F3F2;
 }
 
 /* === Custom Styles Nav === */
@@ -27,4 +28,29 @@ body{
 
 .content{
 	margin-top: 50px;
+}
+
+/* === Signup Form Design ===*/
+.card{
+	border-color: #7047d7;
+}
+.card-header{
+	background-color: #fff;
+	color:#7047d7;
+}
+.form-heading{
+	font-weight: 700;
+}
+.form-control{
+	border-color: #7047d7;
+}
+.form-btn{
+	background-color: #7047d7;
+	border:0px;
+}
+.form-btn:hover{
+	background-color: #7047d7;
+}
+.form-btn:focus{
+	background-color: #7047d7!important;
 }
