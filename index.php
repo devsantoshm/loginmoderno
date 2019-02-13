@@ -34,36 +34,73 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga modi neque, harum, autem illum, commodi voluptatibus sequi debitis enim obcaecati animi amet libero ipsa tempora atque rem qui iste aliquam?</p>
 			</div>
 			<div class="col-md-4 content">
-				<div class="card">
-					<div class="card-header">
-						<div class="row">
-							<div class="col-md-9">
-								<h3 class="form-heading">Signup</h3>
-								<p>Account creating is 100% free so please create the account</p>
-							</div>
-							<div class="col-md-3 text-right">
-								<i class="fa fa-pencil-square-o fa-3x"></i>
+				<div class="signup-cover">
+					<div class="card">
+						<div class="card-header">
+							<div class="row">
+								<div class="col-md-9">
+									<h3 class="form-heading">Signup</h3>
+									<p>Account creating is 100% free so please create the account</p>
+								</div>
+								<div class="col-md-3 text-right">
+									<i class="fa fa-pencil-square-o fa-3x"></i>
+								</div>
 							</div>
 						</div>
+						<div class="card-body">
+							<form>
+								<div class="form-group">
+									<input type="text" id="name" class="form-control" placeholder="name">
+								</div>
+								<div class="form-group">
+									<input type="email" id="email" class="form-control" placeholder="email">
+								</div>
+								<div class="form-group">
+									<input type="password" id="password" class="form-control" placeholder="password">
+								</div>
+								<div class="form-group">
+									<input type="password" id="confirm" class="form-control" placeholder="Confirm Password">
+								</div>
+								<div class="form-group">
+									<button type="button" id="submit" class="btn btn-success btn-block form-btn">Create Account</button>
+								</div>
+								<div class="form-group">
+									<a href="" id="login">Already have an account?</a>
+								</div>
+							</form>
+						</div>
 					</div>
-					<div class="card-body">
-						<form>
-							<div class="form-group">
-								<input type="text" id="name" class="form-control" placeholder="name">
+				</div>
+				
+				<div class="login-cover">
+					<div class="card">
+						<div class="card-header">
+							<div class="row">
+								<div class="col-md-9">
+									<h3 class="form-heading">Login</h3>
+									<p>Enter Email and password</p>
+								</div>
+								<div class="col-md-3 text-right">
+									<i class="fa fa-lock fa-3x"></i>
+								</div>
 							</div>
-							<div class="form-group">
-								<input type="email" id="email" class="form-control" placeholder="email">
-							</div>
-							<div class="form-group">
-								<input type="password" id="password" class="form-control" placeholder="password">
-							</div>
-							<div class="form-group">
-								<input type="password" id="confirm" class="form-control" placeholder="Confirm Password">
-							</div>
-							<div class="form-group">
-								<button type="button" id="submit" class="btn btn-success btn-block form-btn">Create Account</button>
-							</div>
-						</form>
+						</div>
+						<div class="card-body">
+							<form>
+								<div class="form-group">
+									<input type="email" id="email" class="form-control" placeholder="email">
+								</div>
+								<div class="form-group">
+									<input type="password" id="password" class="form-control" placeholder="password">
+								</div>
+								<div class="form-group">
+									<button type="button" id="login" class="btn btn-success btn-block form-btn">Login</button>
+								</div>
+								<div class="form-group">
+									<a href="" id="signup">Create New Account?</a>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
