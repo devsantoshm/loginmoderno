@@ -24,3 +24,7 @@ body{
 .navbar-brand{
 	color:#fff!important;
 }
+
+.content{
+	margin-top: 50px;
+}
