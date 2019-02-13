@@ -70,3 +70,8 @@ body{
 	background-color: #fff;
 	z-index: -1;
 }
+
+/* === Login Form Design ===*/
+.login-cover{
+	display: none;
+}

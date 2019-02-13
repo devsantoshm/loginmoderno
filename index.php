@@ -65,7 +65,7 @@
 									<button type="button" id="submit" class="btn btn-success btn-block form-btn">Create Account</button>
 								</div>
 								<div class="form-group">
-									<a href="" id="login">Already have an account?</a>
+									<a href="#" id="login">Already have an account?</a>
 								</div>
 							</form>
 						</div>
@@ -88,16 +88,16 @@
 						<div class="card-body">
 							<form>
 								<div class="form-group">
-									<input type="email" id="email" class="form-control" placeholder="email">
+									<input type="email" id="login-email" class="form-control" placeholder="email">
 								</div>
 								<div class="form-group">
-									<input type="password" id="password" class="form-control" placeholder="password">
+									<input type="password" id="login-password" class="form-control" placeholder="password">
 								</div>
 								<div class="form-group">
 									<button type="button" id="login" class="btn btn-success btn-block form-btn">Login</button>
 								</div>
 								<div class="form-group">
-									<a href="" id="signup">Create New Account?</a>
+									<a href="#" id="signup">Create New Account?</a>
 								</div>
 							</form>
 						</div>
@@ -107,8 +107,9 @@
 		</div>
 	</div>
 
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/simple.js"></script>
 </body>
 </html>
