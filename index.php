@@ -51,6 +51,7 @@
 							<form>
 								<div class="form-group">
 									<input type="text" id="name" class="form-control" placeholder="name">
+									<div class="name-error error"></div>
 								</div>
 								<div class="form-group">
 									<input type="email" id="email" class="form-control" placeholder="email">
@@ -111,5 +112,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/simple.js"></script>
+<script type="text/javascript" src="assets/js/signup.js"></script>
 </body>
 </html>
