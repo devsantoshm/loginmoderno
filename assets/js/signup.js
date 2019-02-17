@@ -4,6 +4,7 @@ $(document).ready(function(){
 	var password = "";
 	var confirm  = "";
 	var name_reg = /^[a-z ]+$/i
+	var email_reg = /^[a-z]+[0-9a-zA-Z_\.]*@[a-z_]+\.[a-z]+$/;
 
 	$("#name").focusout(function(){
 		
@@ -21,11 +22,39 @@ $(document).ready(function(){
 			$("#name").removeClass("border-red");
 			name = store
 
-		} else{
+		} else {
 			$(".name-error").html("Integer is not allowd!");
 			$("#name").addClass("border-red");
 			$("#name").removeClass("border-green");
 			name = ""
 		}	
+	})
+
+	$("#email").focusout(function(){
+
+		var email_store = $.trim($("#email").val());
+
+        if(email_store.length == ""){
+	        $(".email-error").html("Email is required!");
+		    $("#email").addClass("border-red");
+		    $("#email").removeClass("border-green");
+		    email = "";	
+
+        }else if(email_reg.test(email_store)){
+        	$.ajax({
+                type : 'POST',
+                url  : 'ajax/signup.php',
+                data : {'check_email' : email_store},
+                success : function(feedback){
+                	alert(feedback)
+                }
+        	});
+
+        }else{
+	        $(".email-error").html("Invalid Email Formate!");
+		    $("#email").addClass("border-red");
+		    $("#email").removeClass("border-green");
+		    email = "";
+	    }
 	})
 })
