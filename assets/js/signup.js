@@ -44,9 +44,10 @@ $(document).ready(function(){
         	$.ajax({
                 type : 'POST',
                 url  : 'ajax/signup.php',
+                dataType : 'JSON',
                 data : {'check_email' : email_store},
                 success : function(feedback){
-                	alert(feedback)
+                	alert(feedback['name'])
                 }
         	});
 
