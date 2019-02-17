@@ -133,3 +133,8 @@ body{
 .error{
 	color: red;
 }
+
+.border-green{
+	border-color: green;
+	color: green!important;
+}
