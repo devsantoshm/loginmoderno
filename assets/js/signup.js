@@ -45,14 +45,25 @@ $(document).ready(function(){
                 type : 'POST',
                 url  : 'ajax/signup.php',
                 dataType : 'JSON',
+                beforeSend : function(){
+	                $(".email-error").html('<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>');
+	            },
                 data : {'check_email' : email_store},
                 success : function(feedback){
-                	//alert(feedback['name'])
-                	if (feedback['error'] == 'email_success') {
-                		alert("success")
-                	} else if(feedback['error'] == 'email_fail'){
-                		alert(feedback['message'])
-                	}
+                	setTimeout(function(){
+	                    if(feedback['error'] == 'email_success'){
+	                		$(".email-error").html("<div class='text-success'><i class='fa fa-check-circle'></i> available</div>");
+		                    $("#email").addClass("border-green");
+		                    $("#email").removeClass("border-red");
+		                    email = email_store;
+
+	                	}else if(feedback['error'] == 'email_fail'){
+	                		$(".email-error").html("Sorry this email is already exist!");
+		                    $("#email").addClass("border-red");
+		                    $("#email").removeClass("border-green");
+		                    email = "";
+	                	}
+                	},2000);
                 }
         	});
 

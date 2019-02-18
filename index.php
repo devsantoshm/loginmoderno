@@ -55,7 +55,7 @@
 								</div>
 								<div class="form-group">
 									<input type="email" id="email" class="form-control" placeholder="email">
-									<div class="name-error error"></div>
+									<div class="email-error error"></div>
 								</div>
 								<div class="form-group">
 									<input type="password" id="password" class="form-control" placeholder="password">
