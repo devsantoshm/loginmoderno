@@ -48,17 +48,17 @@
 							</div>
 						</div>
 						<div class="card-body">
-							<form>
+							<form id="signup_submit">
 								<div class="form-group">
-									<input type="text" id="name" class="form-control" placeholder="name">
+									<input type="text" name="name" id="name" class="form-control" placeholder="name">
 									<div class="name-error error"></div>
 								</div>
 								<div class="form-group">
-									<input type="email" id="email" class="form-control" placeholder="email">
+									<input type="email" name="email" id="email" class="form-control" placeholder="email">
 									<div class="email-error error"></div>
 								</div>
 								<div class="form-group">
-									<input type="password" id="password" class="form-control" placeholder="password">
+									<input type="password" name="password" id="password" class="form-control" placeholder="password">
 									<div class="password-error error"></div>
 								</div>
 								<div class="form-group">

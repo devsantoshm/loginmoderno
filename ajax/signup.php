@@ -19,3 +19,17 @@ function check_email(){
 }
 
 check_email();
+
+function singup_submit(){
+
+  GLOBAL $db;
+
+  if(isset($_GET['signup']) && $_GET['signup'] == 'true')
+  {
+   echo $name     = $_POST['name'];
+   echo $email    = $_POST['email'];
+   echo $password = $_POST['password'];
+  }
+}
+
+singup_submit();

@@ -146,5 +146,16 @@ $(document).ready(function(){
 			$("#confirm").removeClass("border-green");
 			confirm = "";	
 	    }
+
+	    if(name.length != "" && email.length != "" && password.length != "" && confirm.length != ""){
+	    	$.ajax({
+	    		type : 'POST',
+	    		url  : 'ajax/signup.php?signup=true',
+	    		data : $("#signup_submit").serialize(),
+	    		success : function(feedback){
+	    			console.log(feedback);
+	    		}
+	    	})
+	    }
 	})
 })
