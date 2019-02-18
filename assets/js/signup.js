@@ -47,7 +47,12 @@ $(document).ready(function(){
                 dataType : 'JSON',
                 data : {'check_email' : email_store},
                 success : function(feedback){
-                	alert(feedback['name'])
+                	//alert(feedback['name'])
+                	if (feedback['error'] == 'email_success') {
+                		alert("success")
+                	} else if(feedback['error'] == 'email_fail'){
+                		alert(feedback['message'])
+                	}
                 }
         	});
 
