@@ -119,4 +119,32 @@ $(document).ready(function(){
 			confirm = confirm_store;
 		}
 	})
+
+	$("#submit").click(function(){
+
+	    if(name.length == ""){
+		    $(".name-error").html("Name is required!");
+			$("#name").addClass("border-red");
+			$("#name").removeClass("border-green");
+			name = "";	
+	    }
+	    if(email.length == ""){
+		    $(".email-error").html("Email is required!");
+			$("#email").addClass("border-red");
+			$("#email").removeClass("border-green");
+			email = "";	
+	    }
+	    if(password.length == ""){
+		    $(".password-error").html("Password is required!");
+			$("#password").addClass("border-red");
+			$("#password").removeClass("border-green");
+			password = "";	
+	    }
+	    if(confirm.length == ""){
+		    $(".confirm-error").html("Confirm Password is required!");
+			$("#confirm").addClass("border-red");
+			$("#confirm").removeClass("border-green");
+			confirm = "";	
+	    }
+	})
 })
