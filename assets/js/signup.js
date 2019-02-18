@@ -97,4 +97,26 @@ $(document).ready(function(){
 		    password = "";
 	    }
 	})
+
+	$("#confirm").focusout(function(){
+
+		var confirm_store = $.trim($("#confirm").val());
+
+		if(confirm_store.length == ""){
+			$(".confirm-error").html("Confirm Password is required!");
+			$("#confirm").addClass("border-red");
+			$("#confirm").removeClass("border-green");
+			confirm = "";	
+		} else if(confirm_store != password){
+			$(".confirm-error").html("Password is not matched!");
+			$("#confirm").addClass("border-red");
+			$("#confirm").removeClass("border-green");
+			confirm = "";
+		}else{
+			$(".confirm-error").html("");
+			$("#confirm").addClass("border-green");
+			$("#confirm").removeClass("border-red");
+			confirm = confirm_store;
+		}
+	})
 })
