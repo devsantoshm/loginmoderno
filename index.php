@@ -59,6 +59,7 @@
 								</div>
 								<div class="form-group">
 									<input type="password" id="password" class="form-control" placeholder="password">
+									<div class="password-error error"></div>
 								</div>
 								<div class="form-group">
 									<input type="password" id="confirm" class="form-control" placeholder="Confirm Password">

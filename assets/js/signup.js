@@ -5,6 +5,7 @@ $(document).ready(function(){
 	var confirm  = "";
 	var name_reg = /^[a-z ]+$/i
 	var email_reg = /^[a-z]+[0-9a-zA-Z_\.]*@[a-z_]+\.[a-z]+$/;
+	var password_reg = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
 
 	$("#name").focusout(function(){
 		
@@ -72,6 +73,28 @@ $(document).ready(function(){
 		    $("#email").addClass("border-red");
 		    $("#email").removeClass("border-green");
 		    email = "";
+	    }
+	})
+
+	$("#password").focusout(function(){
+
+	    var password_store = $.trim($("#password").val());
+
+	    if(password_store.length == ""){
+	    	$(".password-error").html("Password is required!");
+	    	$("#password").addClass("border-red");
+		    $("#password").removeClass("border-green");
+		    password = "";
+	    }else if(password_reg.test(password_store)){
+	        $(".password-error").html("<div class='text-success'><i class='fa fa-check-circle'></i> Your Password Is Strong!</div>");
+	    	$("#password").addClass("border-green");
+		    $("#password").removeClass("border-red");
+		    password = password_store;
+	    }else{
+	    	$(".password-error").html("8 characters or longer. Combine upper and lowercase letters and numbers");
+	    	$("#password").addClass("border-red");
+		    $("#password").removeClass("border-green");
+		    password = "";
 	    }
 	})
 })
