@@ -26,9 +26,16 @@ function singup_submit(){
 
   if(isset($_GET['signup']) && $_GET['signup'] == 'true')
   {
-   echo $name     = $_POST['name'];
-   echo $email    = $_POST['email'];
-   echo $password = $_POST['password'];
+    $name     = $_POST['name'];
+    $email    = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $Query    = $db->prepare("INSERT INTO users (name, email, password) VALUES (?,?,?)");
+    $Query->execute([$name, $email, $password]);
+
+    if($Query){
+      $_SESSION['user_name'] = $name;
+      echo json_encode(['error' => 'success', 'msg' => 'success.php']);
+    }
   }
 }
 

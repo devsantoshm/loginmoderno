@@ -152,8 +152,11 @@ $(document).ready(function(){
 	    		type : 'POST',
 	    		url  : 'ajax/signup.php?signup=true',
 	    		data : $("#signup_submit").serialize(),
+	    		dataType: 'JSON',
 	    		success : function(feedback){
-	    			console.log(feedback);
+	    			if (feedback['error'] == 'success') {
+	    				console.log("account is created");
+	    			}
 	    		}
 	    	})
 	    }
