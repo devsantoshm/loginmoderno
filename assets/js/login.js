@@ -56,13 +56,21 @@ $(document).ready(function(){
 				success : function(feedback){
 					if(feedback['error'] == 'success'){	
                         $(".login-error").html("");
+                        $("#login-password").addClass("border-green");
+						$("#login-email").addClass("border-green");
+						$("#login-password").removeClass("border-red");
+						$("#login-email").removeClass("border-red");
 						$(".login-error").addClass("login-progress");
 						setTimeout(function(){
                           location = feedback['msg'];
 						},2000);
 					}else if(feedback['error'] == 'no_password'){
+						$("#login-password").addClass("border-red");
+						$("#login-password").removeClass("border-green");
 						$(".login-error").html(feedback['msg']);
 					}else if(feedback['error'] == 'no_email'){
+						$("#login-email").removeClass("border-green");
+						$("#login-email").addClass("border-red");
 						$(".login-error").html(feedback['msg']);
 					}
 				}
