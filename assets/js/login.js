@@ -34,4 +34,29 @@ $(document).ready(function(){
 		}
 	});//Password validation close
 
+	$("#login-submit").click(function(){
+		if(email.length == ""){
+		    $("#login-email").addClass("border-red");
+			$("#login-email").removeClass("border-green");
+			$(".login-email-error").html("Email is required!");
+			email = "";	
+		}
+		if(password.length == ""){
+		    $("#login-password").addClass("border-red");
+			$("#login-password").removeClass("border-green");
+			$(".login-password-error").html("Password is required!");
+			password = "";	
+		}
+		if(password.length != "" && email.length != ""){
+			$.ajax({
+				type : 'POST',
+				url  : 'ajax/login.php?login_form=true',
+				data : $("#login-submit-form").serialize(),
+				success : function(feedback){
+					alert(feedback)
+				}
+			})
+		}
+	})
+
 });

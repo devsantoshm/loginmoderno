@@ -78,13 +78,13 @@
 							</div>
 						</div>
 						<div class="card-body">
-							<form>
+							<form id="login-submit-form">
 								<div class="form-group">
-									<input type="email" id="login-email" class="form-control" placeholder="email">
+									<input type="email" name="login_email" id="login-email" class="form-control" placeholder="email">
 									<div class="login-email-error error"></div>
 								</div>
 								<div class="form-group">
-									<input type="password" id="login-password" class="form-control" placeholder="password">
+									<input type="password" name="login_password" id="login-password" class="form-control" placeholder="password">
 									<div class="login-password-error error"></div>
 								</div>
 								<div class="form-group">
