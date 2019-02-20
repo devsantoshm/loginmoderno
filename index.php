@@ -11,7 +11,7 @@
 <body>
 	
 	<?php include "parts/nav.php"; ?>
-	
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 content">
@@ -81,12 +81,14 @@
 							<form>
 								<div class="form-group">
 									<input type="email" id="login-email" class="form-control" placeholder="email">
+									<div class="login-email-error error"></div>
 								</div>
 								<div class="form-group">
 									<input type="password" id="login-password" class="form-control" placeholder="password">
+									<div class="login-password-error error"></div>
 								</div>
 								<div class="form-group">
-									<button type="button" id="login" class="btn btn-success btn-block form-btn">Login</button>
+									<button type="button" id="login-submit" class="btn btn-success btn-block form-btn">Login</button>
 								</div>
 								<div class="form-group">
 									<a href="#" id="signup">Create New Account?</a>
@@ -104,5 +106,6 @@
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/simple.js"></script>
 <script type="text/javascript" src="assets/js/signup.js"></script>
+<script type="text/javascript" src="assets/js/login.js"></script>
 </body>
 </html>
