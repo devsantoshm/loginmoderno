@@ -80,6 +80,9 @@
 						<div class="card-body">
 							<form id="login-submit-form">
 								<div class="form-group">
+									<div class="login-error error"></div>
+								</div>
+								<div class="form-group">
 									<input type="email" name="login_email" id="login-email" class="form-control" placeholder="email">
 									<div class="login-email-error error"></div>
 								</div>

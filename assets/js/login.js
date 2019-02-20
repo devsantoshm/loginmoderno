@@ -52,8 +52,15 @@ $(document).ready(function(){
 				type : 'POST',
 				url  : 'ajax/login.php?login_form=true',
 				data : $("#login-submit-form").serialize(),
+				dataType : "JSON",
 				success : function(feedback){
-					alert(feedback)
+					if(feedback['error'] == 'success'){	
+                        location = feedback['msg'];	
+					}else if(feedback['error'] == 'no_password'){
+						$(".login-error").html(feedback['msg']);
+					}else if(feedback['error'] == 'no_email'){
+						$(".login-error").html(feedback['msg']);
+					}
 				}
 			})
 		}
