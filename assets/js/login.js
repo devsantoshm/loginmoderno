@@ -55,7 +55,11 @@ $(document).ready(function(){
 				dataType : "JSON",
 				success : function(feedback){
 					if(feedback['error'] == 'success'){	
-                        location = feedback['msg'];	
+                        $(".login-error").html("");
+						$(".login-error").addClass("login-progress");
+						setTimeout(function(){
+                          location = feedback['msg'];
+						},2000);
 					}else if(feedback['error'] == 'no_password'){
 						$(".login-error").html(feedback['msg']);
 					}else if(feedback['error'] == 'no_email'){
