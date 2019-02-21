@@ -1,10 +1,40 @@
 .left-area{
 	background-color: #fff;
 	padding:15px;
+	position: relative;
+	overflow: hidden;
+}
+.left-area::before{
+	position: absolute;
+	content: "Profile";
+	top: 0;
+	left: -35px;
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	transform: rotate(-30deg);
+	background-color: #f93d67;
+	color:#fff;
 }
 .right-area{
 	background-color: #fff;
 	padding: 15px;
+	position: relative;
+	overflow: hidden;
+}
+.right-area::before{
+	position: absolute;
+	content: "Details";
+	top: 0;
+	right: -35px;
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	transform: rotate(30deg);
+	background-color: #7047d7;
+	color:#fff;
 }
 .contents{
 	margin-top: 50px;
