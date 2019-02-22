@@ -33,6 +33,7 @@
     		<div class="col-md-9">
     			<div class="right-area">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio.
+                    <?php include 'parts/bio.php'; ?>
     			</div><!-- right-area -->
     		</div><!-- col -->
     	</div><!-- row -->
