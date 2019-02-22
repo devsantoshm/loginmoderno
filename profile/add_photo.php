@@ -16,13 +16,6 @@
 <body>
 	<?php include '../parts/nav.php'; ?>
 
-    <?php if(isset($_SESSION['image_success'])): ?>
-        <div class="alert alert-success all-msg text-center success-msg">
-            <?php echo $_SESSION['image_success']; ?>
-        </div>
-    <?php endif; ?>
-    <?php unset($_SESSION['image_success']); ?>
-
     <div class="container contents">
     	<div class="row">
     		<div class="col-md-3">
@@ -32,7 +25,19 @@
     		</div><!-- col -->
     		<div class="col-md-9">
     			<div class="right-area">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio.
+                    <h4>Update Profile Picture</h4><hr>
+                    <div class="form-group">
+                        <?php update_picture(); ?>
+                    </div>
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="picture_upload" id="picture_upload_label"></label>
+                            <input type="file" name="file" class="image_upload profile-input" required="" id="picture_upload">
+                        </div><!-- form-group -->
+                        <div class="form-group">
+                            <input type="submit" value="Update Picture" name="picture" class="btn btn-success">
+                        </div><!-- form-group -->
+                    </form>
     			</div><!-- right-area -->
     		</div><!-- col -->
     	</div><!-- row -->
@@ -42,13 +47,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/profile.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        setTimeout(function(){
-        $(".all-msg").fadeOut("slow");
-        },2000);
-    })
-</script>
     
 </body>
 </html>
