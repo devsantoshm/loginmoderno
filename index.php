@@ -1,3 +1,10 @@
+<?php include 'connection/db.php'; ?>
+<?php 
+if(isset($_SESSION['user_id']))
+{
+	header("location:profile/index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,6 +18,13 @@
 <body>
 	
 	<?php include "parts/nav.php"; ?>
+
+	<?php if(isset($_SESSION['unutherrized'])): ?>
+        <div class="alert alert-danger text-center all-msg">
+            <strong><?php echo $_SESSION['unutherrized']; ?></strong>
+        </div>
+    <?php endif; ?>
+    <?php unset($_SESSION['unutherrized']); ?>
 
 	<div class="container">
 		<div class="row">
@@ -110,5 +124,12 @@
 <script type="text/javascript" src="assets/js/simple.js"></script>
 <script type="text/javascript" src="assets/js/signup.js"></script>
 <script type="text/javascript" src="assets/js/login.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        setTimeout(function(){
+        $(".all-msg").fadeOut("slow");
+        },2000);
+    })
+</script>
 </body>
 </html>

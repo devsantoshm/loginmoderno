@@ -54,4 +54,24 @@
 .first-li{
 	margin-top: 20px;
 }
+.list-group-item:hover{
+	background-color: #7047d7;
+}
+.list-group-item:hover a{
+	color:#fff;
+	text-decoration: none;
+}
+.logout-btn{
+	background-color: rgba(0,0,0,.0);
+	border:1px solid #fff;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-ms-border-radius: 30px;
+	-o-border-radius: 30px;
+	border-radius: 30px;
+}
+.logout-btn:hover{
+	background-color: rgba(0,0,0,.0);
+	border:1px solid #fff;
+}
 

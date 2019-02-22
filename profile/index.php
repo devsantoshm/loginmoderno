@@ -1,5 +1,8 @@
 <?php include 'functions/func.php'; ?>
-
+<?php if(!isset($_SESSION['user_id'])): ?>
+    <?php $_SESSION['unutherrized'] = "Please Enter Email & Password"; ?>
+    <?php header("location:../index.php"); ?>
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,6 +15,7 @@
 </head>
 <body>
 	<?php include '../parts/nav.php'; ?>
+
     <div class="container contents">
     	<div class="row">
     		<div class="col-md-3">
