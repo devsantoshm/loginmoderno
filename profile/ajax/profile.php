@@ -34,4 +34,39 @@ function bio(){
 
 bio();
 
+function add_facebook_account(){
+	GLOBAL $db;
+	
+	if(isset($_GET['add_facebook']) && $_GET['add_facebook'] == 'true'){
+		
+		$facebook_val = $_POST['facebook_val'];
+		$user_id = $_SESSION['user_id'];
+		$Query = $db->prepare("SELECT facebook FROM users WHERE id = ?");
+		$Query->execute(array($user_id));
+		$r = $Query->fetch(PDO::FETCH_OBJ);
+
+		if(empty($r->facebook)){
+			$Insert = $db->prepare("UPDATE users SET facebook = ? WHERE id = ?");
+			$Insert->execute(array($facebook_val, $user_id));
+			if($Insert){
+				$_SESSION['facebook_success'] = '<i class="fa fa-check-circle"></i> Your Facebook account is successfully added';
+				echo json_encode(array('error' => 'success'));
+			} else {
+				echo json_encode(array('error' => 'error'));
+			}
+		} else {
+			$Insert = $db->prepare("UPDATE users SET facebook = ? WHERE id = ?");
+			$Insert->execute(array($facebook_val, $user_id));
+			if($Insert){
+				$_SESSION['facebook_success'] = '<i class="fa fa-check-circle"></i> Your Facebook account is successfully Updated';
+				echo json_encode(array('error' => 'success'));
+			} else {
+				echo json_encode(array('error' => 'error'));
+			}
+		}
+	}
+}
+
+add_facebook_account();
+
 ?>
