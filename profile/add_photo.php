@@ -38,6 +38,11 @@
                             <input type="submit" value="Update Picture" name="picture" class="btn btn-success">
                         </div><!-- form-group -->
                     </form>
+                    <?php include 'parts/bio.php'; ?>
+                    <?php include 'parts/facebook.php'; ?>
+                    <?php include 'parts/linkedin.php'; ?>
+                    <?php include 'parts/name.php'; ?>
+                    <?php include 'parts/change_password.php'; ?>
     			</div><!-- right-area -->
     		</div><!-- col -->
     	</div><!-- row -->

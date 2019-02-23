@@ -34,6 +34,10 @@
     			<div class="right-area">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio.
                     <?php include 'parts/bio.php'; ?>
+                    <?php include 'parts/facebook.php'; ?>
+                    <?php include 'parts/linkedin.php'; ?>
+                    <?php include 'parts/name.php'; ?>
+                    <?php include 'parts/change_password.php'; ?>
     			</div><!-- right-area -->
     		</div><!-- col -->
     	</div><!-- row -->

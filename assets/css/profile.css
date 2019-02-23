@@ -78,3 +78,13 @@
 	background-color: #7ed56f;
 	border:0px;
 }
+.profile-input{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	border:1px solid #ced4da;
+	padding-left: 10px;
+	padding-right: 10px;
+}
