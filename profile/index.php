@@ -23,6 +23,13 @@
     <?php endif; ?>
     <?php unset($_SESSION['image_success']); ?>
 
+    <?php if(isset($_SESSION['bio_success'])): ?>
+        <div class="alert alert-success all-msg text-center success-msg">
+            <?php echo $_SESSION['bio_success']; ?>
+        </div>
+    <?php endif; ?>
+    <?php unset($_SESSION['bio_success']); ?>
+
     <div class="container contents">
     	<div class="row">
     		<div class="col-md-3">
