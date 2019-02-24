@@ -69,4 +69,37 @@ function add_facebook_account(){
 
 add_facebook_account();
 
+function add_linkedin_account(){
+	GLOBAL $db;
+	if(isset($_GET['add_linkedin']) && $_GET['add_linkedin'] == 'true'){
+		$linkedin_val = $_POST['linkedin_val'];
+		$user_id = $_SESSION['user_id'];
+		$Query = $db->prepare("SELECT linkedin FROM users WHERE id = ?");
+		$Query->execute(array($user_id));
+		$r = $Query->fetch(PDO::FETCH_OBJ);
+		
+		if(empty($r->linkedin)){
+			$Insert = $db->prepare("UPDATE users SET linkedin = ? WHERE id = ?");
+			$Insert->execute(array($linkedin_val, $user_id));
+			if($Insert){
+				$_SESSION['linkedin_success'] = '<i class="fa fa-check-circle"></i> Your Linkedin account is successfully added';
+				echo json_encode(array('error' => 'success'));
+			} else {
+				echo json_encode(array('error' => 'error'));
+			}
+		} else {
+			$Insert = $db->prepare("UPDATE users SET linkedin = ? WHERE id = ?");
+			$Insert->execute(array($linkedin_val, $user_id));
+			if($Insert){
+				$_SESSION['linkedin_success'] = '<i class="fa fa-check-circle"></i> Your Linkedin account is successfully Updated';
+				echo json_encode(array('error' => 'success'));
+			} else {
+				echo json_encode(array('error' => 'error'));
+			}
+		}
+	}
+}
+
+add_linkedin_account();
+
 ?>

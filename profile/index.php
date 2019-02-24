@@ -37,6 +37,13 @@
     <?php endif; ?>
     <?php unset($_SESSION['facebook_success']); ?>
 
+    <?php if(isset($_SESSION['linkedin_success'])): ?>
+        <div class="alert alert-success all-msg text-center success-msg">
+            <?php echo $_SESSION['linkedin_success']; ?>
+        </div>
+    <?php endif; ?>
+    <?php unset($_SESSION['linkedin_success']); ?>
+
     <div class="container contents">
     	<div class="row">
     		<div class="col-md-3">

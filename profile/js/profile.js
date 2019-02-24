@@ -41,3 +41,28 @@ function add_facebook_account(facebook_val){
 		$("#add_facebook").css("border-color","red");
 	}
 }
+
+function add_linkedin_url(linkedin_val){
+	var linkedin_val = $.trim(linkedin_val);
+	var linkedin_url = /^(http|https)\:(\/\/)(www)\.linkedin\.com(\/)[a-zA-Z0-9]+$/;
+	if(linkedin_val.length == ""){
+		$(".linkedin-error").html('Linkedin Field is required');
+		$("#add_linkedin").css("border-color","red");
+	} else if(linkedin_url.test(linkedin_val)){
+		$.ajax({
+			type : 'POST',
+			url  : 'ajax/profile.php?add_linkedin=true',
+			data : {'linkedin_val': linkedin_val},
+			dataType : 'JSON',
+			success : function(feedback){
+				if(feedback['error'] == 'success'){
+					location = 'index.php';
+				}
+			}
+		})
+
+	} else {
+		$(".linkedin-error").html('Invalid Linkedin URL');
+		$("#add_linkedin").css("border-color","red");
+	}
+}
