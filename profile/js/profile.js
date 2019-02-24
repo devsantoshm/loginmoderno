@@ -107,3 +107,30 @@ function change_password(current_pwd, new_pwd){
 		})
 	}
 }
+
+function change_name(name){
+	var name = $.trim(name);
+	if(name.length == ""){
+		$('.name-error').html('Name is required');
+		$("#update_name").css('border-color',"red");
+	} else {
+		$('.name-error').html('');
+		$("#update_name").css('border-color',"green");
+	}
+	if(name.length != ""){
+		$.ajax({
+			type : 'POST',
+			url  : 'ajax/profile.php?change_name=true',
+			data : {'change_name' :name},
+			dataType : 'JSON',
+			success : function(feedback){
+				if(feedback['error'] == 'success'){
+					location = "index.php";
+				} else if(feedback['error'] == 'pattren'){
+					$('.name-error').html(feedback['msg']);
+					$("#update_name").css('border-color',"red");
+				}
+			}
+		})
+	}
+}

@@ -51,6 +51,13 @@
     <?php endif; ?>
     <?php unset($_SESSION['password_success']); ?>
 
+    <?php if(isset($_SESSION['name_update'])): ?>
+        <div class="alert alert-success all-msg text-center success-msg">
+            <?php echo $_SESSION['name_update']; ?>
+        </div>
+    <?php endif; ?>
+    <?php unset($_SESSION['name_update']); ?>
+
     <div class="container contents">
     	<div class="row">
     		<div class="col-md-3">

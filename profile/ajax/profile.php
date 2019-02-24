@@ -133,4 +133,25 @@ function change_password(){
 
 change_password();
 
+function update_name(){
+	GLOBAL $db;
+	if(isset($_GET['change_name']) && $_GET['change_name'] == 'true'){
+		$name = $_POST['change_name'];
+		$name_reg = "/^[a-zA-Z ]+$/";
+		$user_id = $_SESSION['user_id'];
+		if(preg_match($name_reg, $name)){
+       		$Query = $db->prepare("UPDATE users SET name = ? WHERE id = ?");
+       		$Query->execute(array($name, $user_id));
+       		if($Query){
+       			$_SESSION['name_update'] = "<i class='fa fa-check-circle'></i> Your name is successfully updated";
+       			echo json_encode(array('error' => 'success'));
+       		}
+		} else {
+			echo json_encode(array('error' => 'pattren', 'msg' => 'Name will be only character'));
+		}
+	}
+}
+
+update_name();
+
 ?>
