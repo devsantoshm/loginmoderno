@@ -19,7 +19,7 @@
                    </div><!-- form-group -->
                    <div class="modal-footer">
                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                       <button type="button" class="btn btn-success">Save Changes</button>
+                       <button type="button" class="btn btn-success" onclick="change_password(this.form.current.value, this.form.new_password.value);">Save Changes</button>
                    </div><!-- modal-footer -->
                </form>
            </div><!-- modal-body -->

@@ -102,4 +102,35 @@ function add_linkedin_account(){
 
 add_linkedin_account();
 
+function change_password(){
+	GLOBAL $db;
+	if(isset($_GET['password']) && $_GET['password'] == 'true'){
+		$current_password = $_POST['current_password'];
+		$new_password     = $_POST['new_password'];
+		$user_id          = $_SESSION['user_id'];
+		$Query = $db->prepare("SELECT password FROM users WHERE id = ?");
+		$Query->execute(array($user_id));
+		$r = $Query->fetch(PDO::FETCH_OBJ);
+		$db_password = $r->password;
+		if(password_verify($current_password, $db_password)){
+        	$password_reg = "/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/";
+        	if(preg_match($password_reg, $new_password )){
+         		$new_pwd = password_hash($new_password, PASSWORD_DEFAULT);
+        		$Update_Password = $db->prepare("UPDATE users SET password = ? WHERE id = ?");
+        		$Update_Password->execute(array($new_pwd, $user_id));
+	         	if($Update_Password){
+	         		$_SESSION['password_success'] = '<i class="fa fa-check-circle"></i> Your Password is succesfully updated!';
+	         		echo json_encode(array('error' => 'success'));
+	         	}
+         	} else {
+         		echo json_encode(array('error' => 'pattren', 'msg' => '8 characters or longer. Combine upper and lowercase letters and numbers'));
+         	}
+		} else {
+			echo json_encode(array('error' => 'current_password_wrong', 'msg' => 'Current Paassword is wrong'));
+		}
+	}
+}
+
+change_password();
+
 ?>

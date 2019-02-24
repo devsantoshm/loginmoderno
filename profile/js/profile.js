@@ -66,3 +66,44 @@ function add_linkedin_url(linkedin_val){
 		$("#add_linkedin").css("border-color","red");
 	}
 }
+
+function change_password(current_pwd, new_pwd){
+	var current_pwd = $.trim(current_pwd);
+	var new_pwd     = $.trim(new_pwd);
+	if(current_pwd.length == ""){
+		$(".current-error").html("Current Password is required");
+		$("#current").css("border-color", "red");
+	} else {
+		$(".current-error").html("");
+		$("#current").css("border-color", "green");
+	}
+
+	if(new_pwd.length == ""){
+		$(".new-error").html("New Password is required");
+		$("#new_password").css("border-color", "red");
+	} else {
+		$(".new-error").html("");
+		$("#new_password").css("border-color", "green");
+	}
+
+	if(current_pwd.length != "" && new_pwd.length != ""){
+		$.ajax({
+			type : 'POST',
+			url  : 'ajax/profile.php?password=true',
+			data : {'current_password': current_pwd, 'new_password': new_pwd},
+			dataType : 'JSON',
+			success : function(feedback){
+				// alert(feedback);
+              if(feedback['error'] == 'success'){
+              	location = "index.php";
+              } else if(feedback['error'] == "pattren"){
+              	$(".new-error").html(feedback['msg']);
+              	$("#new_password").css('border-color',"red");
+              } else if(feedback['error'] == "current_password_wrong"){
+              	$(".current-error").html(feedback['msg']);
+              	$("#current").css("border-color","red");
+              }
+			}
+		})
+	}
+}
