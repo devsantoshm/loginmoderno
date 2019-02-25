@@ -134,3 +134,24 @@ function change_name(name){
 		})
 	}
 }
+
+function add_address(address) {
+	var address = $.trim(address);
+	if(address.length == ""){
+		$(".address-error").html("Address is required");
+		$("#autocomplete").css("border-color","red");
+	} else {
+		$.ajax({
+			type : 'POST',
+			url  : 'ajax/profile.php?address=true',
+			data : {'add_address': address},
+			dataType : 'JSON',
+			success : function(feedback){
+				if(feedback['error'] == "success"){
+					location = "index.php";
+				}
+			}
+
+		})
+	}
+}
