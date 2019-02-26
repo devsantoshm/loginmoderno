@@ -216,3 +216,13 @@ body{
 	-o-border-radius: 0px;
 	border-radius: 0px;
 }
+
+.fa-thumbs-o-up{
+	color:#f93d67!important;
+	transform: rotate(-20deg)!important;
+	font-size: 45px;
+	margin-top: 20px;
+}
+.online{
+	color:#f93d67;
+}

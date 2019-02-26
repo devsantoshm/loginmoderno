@@ -29,8 +29,14 @@ if(isset($_SESSION['user_id']))
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 content">
-				<h1>Its always free</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga modi neque, harum, autem illum, commodi voluptatibus sequi debitis enim obcaecati animi amet libero ipsa tempora atque rem qui iste aliquam?</p>
+				<?php if(isset($_SESSION['online_user'])): ?>
+					<h3>Thank You <span class="online"><?php echo $_SESSION['online_user'] ?></span> See you next time </h3>
+					<p><i class="fa fa-thumbs-o-up"></i></p>
+				<?php else: ?>
+					<h1>Its always free</h1><hr>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A voluptate dignissimos fuga in dolor quia natus porro blanditiis sint provident dolore libero, deleniti eius voluptatem aperiam vitae quos itaque labore!</p>
+				<?php endif; ?>
+				<?php unset($_SESSION['online_user']); ?>
 			</div>
 			<div class="col-md-4 content">
 				<div class="signup-cover">
