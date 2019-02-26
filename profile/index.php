@@ -74,7 +74,18 @@
     		</div><!-- col -->
     		<div class="col-md-9">
     			<div class="right-area">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia harum qui nulla unde aut dolor velit dolores sequi voluptatibus id, hic, quae quis officiis illo error, reiciendis in? Earum, optio.
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h5>Informations</h5>
+                        </div><!-- col -->
+                        <div class="col-md-9">
+                            <?php percentage(); ?>
+                        </div>
+                    </div><!-- row -->
+
+                    <hr>
+                    <?php user_info(); ?>
+                    
                     <?php include 'parts/bio.php'; ?>
                     <?php include 'parts/facebook.php'; ?>
                     <?php include 'parts/linkedin.php'; ?>
