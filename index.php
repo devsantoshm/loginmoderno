@@ -42,7 +42,7 @@ if(isset($_SESSION['user_id']))
 				<div class="signup-cover">
 					<div class="card">
 						<div class="card-header">
-							<div class="row">
+							<!-- <div class="row">
 								<div class="col-md-9">
 									<h3 class="form-heading">Signup</h3>
 									<p>Account creating is 100% free so please create the account</p>
@@ -50,7 +50,7 @@ if(isset($_SESSION['user_id']))
 								<div class="col-md-3 text-right">
 									<i class="fa fa-pencil-square-o fa-3x"></i>
 								</div>
-							</div>
+							</div> -->
 						</div>
 						<div class="card-body">
 							<form id="signup_submit">
@@ -81,13 +81,16 @@ if(isset($_SESSION['user_id']))
 								</div>
 							</form>
 						</div>
+						<div class="form-icon">
+							<div class="label-heading"><h5>Create New Account</h5></div>
+						</div>
 					</div>
 				</div>
 				
 				<div class="login-cover">
 					<div class="card">
 						<div class="card-header">
-							<div class="row">
+							<!-- <div class="row">
 								<div class="col-md-9">
 									<h3 class="form-heading">Login</h3>
 									<p>Enter Email and password</p>
@@ -95,7 +98,7 @@ if(isset($_SESSION['user_id']))
 								<div class="col-md-3 text-right">
 									<i class="fa fa-lock fa-3x"></i>
 								</div>
-							</div>
+							</div> -->
 						</div>
 						<div class="card-body">
 							<form id="login-submit-form">
@@ -117,6 +120,9 @@ if(isset($_SESSION['user_id']))
 									<a href="#" id="signup">Create New Account?</a>
 								</div>
 							</form>
+						</div>
+						<div class="form-icon">
+							<div class="label-heading"><h5>User Login</h5></div>
 						</div>
 					</div>
 				</div>
